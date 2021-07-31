@@ -1,4 +1,5 @@
 import React from 'react';
+import HardSoftSkills from '../../components/Profile/HardSoftSkills';
 import Header from '../../components/Profile/Header';
 import JobInfo from '../../components/Profile/JobInfo';
 import { Main } from './style';
@@ -22,10 +23,25 @@ const userInfo = {
     type: 'Startup',
     minSalary: 40000,
     maxSalary: 45000,
-    travle: true,
+    travel: true,
     remote: true,
     inmediatStart: true
-  }
+  },
+  hardSkills: [
+    { name: 'javascript', points: 1200 },
+    { name: 'c', points: 200 },
+    { name: 'react', points: 800 },
+    { name: 'html-5', points: 950 },
+    { name: 'css-3', points: 1000 },
+    { name: 'java', points: 250 }
+  ],
+  softSkills: [
+    { name: 'Teamwork', points: 4, total: 5 },
+    { name: 'Capacidad analitica', points: 5, total: 5 },
+    { name: 'Comunicación', points: 3, total: 5 },
+    { name: 'Resolución de problemas', points: 5, total: 5 },
+    { name: 'Creativity', points: 4, total: 5 }
+  ]
 };
 
 export default function Profile() {
@@ -33,6 +49,7 @@ export default function Profile() {
     <Main>
       <Header userInfo={userInfo} />
       <JobInfo userInfo={userInfo} />
+      <HardSoftSkills userInfo={userInfo} />
     </Main>
   );
 }

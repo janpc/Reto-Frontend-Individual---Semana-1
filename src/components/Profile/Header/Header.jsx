@@ -63,14 +63,14 @@ export default function Header({ userInfo }) {
       <Information>
         <div>
           <a href={github}>
-            <Github size="26" />
+            <Github size="22" />
           </a>
           <a href={linkedIn}>
-            <Linkedin size="26" />
+            <Linkedin size="22" />
           </a>
         </div>
         <div>
-          <Location size="26" />
+          <Location size="22" />
           <span>{adress}</span>
         </div>
         <span>Última conexión {lastConexion}</span>
