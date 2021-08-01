@@ -10,7 +10,7 @@ const Card = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'TMontserrat', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   color: ${colors.secondary.main};
 `;
 

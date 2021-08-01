@@ -23,7 +23,7 @@ const ProfileImage = styled.img`
 `;
 
 const Name = styled.h3`
-  margin: 0.75rem 0 0.5rem;
+  margin: 0.75rem 1rem 0.5rem;
   font-size: 24px;
 `;
 
@@ -67,7 +67,7 @@ const Information = styled.div`
   gap: 1rem 2rem;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 1rem;
 
   & > div {
     display: flex;

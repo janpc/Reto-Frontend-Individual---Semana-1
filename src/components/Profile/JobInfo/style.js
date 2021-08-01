@@ -3,7 +3,7 @@ import colors from '../../../style/colors';
 
 const Title = styled.h4`
   font-size: 20px;
-  margin: 2.5rem 0 1rem;
+  margin: 2.5rem 1rem 1rem;
 `;
 
 const Info = styled.div`
@@ -12,7 +12,7 @@ const Info = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin: 1rem;
 
   & > div {
     display: flex;
@@ -28,7 +28,7 @@ const ExtraInfo = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem 0 2rem;
+  margin: 1rem 1rem 2rem;
 
   & > div {
     display: flex;

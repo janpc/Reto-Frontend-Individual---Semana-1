@@ -14,12 +14,14 @@ import { EditPosition } from '../../../style/main';
 import { Card } from '../../../style/main';
 
 import { Github, Linkedin, Location, Edit } from '../../../icons';
+import EditProfileCard from '../../EditCard/EditProfileCard';
+import { useState } from 'react';
 
 export default function Header({ userInfo }) {
   const {
     name,
     image,
-    backgrounImage,
+    backgroundImage,
     email,
     phone,
     description,
@@ -31,63 +33,67 @@ export default function Header({ userInfo }) {
     stack
   } = userInfo;
 
+  const [isShowingEditForm, setIsShowingEditForm] = useState(false);
+
   return (
-    <Card>
-      <BackgroundImage
-        url={
-          backgrounImage ||
-          'https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=800&h=300'
-        }
-      >
-        <EditPosition top="0.5rem" right="0.5rem">
-          <Edit size="16px" />
-        </EditPosition>
-        <ProfileImage
-          alt={name}
-          src={
-            image
-              ? image
-              : 'https://i1.wp.com/bripgroup.com/wp-content/uploads/2018/05/blank-profile-picture-973460_640.png?resize=300%2C300&ssl=1'
-          }
+    <>
+      {isShowingEditForm && (
+        <EditProfileCard
+          userInfo={userInfo}
+          closeForm={() => setIsShowingEditForm(false)}
         />
-      </BackgroundImage>
-      <EditPosition top="165px" right="0.5rem">
-        <Edit size="16px" />
-      </EditPosition>
-      <Name>{name}</Name>
-      <Contact>
-        <a href={`mailto:${email}`}>{email}</a>
-        <a href={`tel:${phone}`}>{phone}</a>
-      </Contact>
-      <Description>{description}</Description>
-      <Information>
-        <div>
-          <a href={github}>
-            <Github size="22" />
-          </a>
-          <a href={linkedIn}>
-            <Linkedin size="22" />
-          </a>
-        </div>
-        <div>
-          <Location size="22" />
-          <span>{adress}</span>
-        </div>
-        <span>Última conexión {lastConexion}</span>
-      </Information>
-      <Job>Buscando trabajo de {job}</Job>
-      <Stack>
-        <EditPosition>
+      )}
+      <Card>
+        <BackgroundImage url={backgroundImage}>
+          <EditPosition top="0.5rem" right="0.5rem">
+            <Edit size="16px" />
+          </EditPosition>
+          <ProfileImage alt={name} src={image} />
+        </BackgroundImage>
+        <EditPosition
+          top="165px"
+          right="0.5rem"
+          onClick={() => setIsShowingEditForm(true)}
+        >
           <Edit size="16px" />
         </EditPosition>
-        <legend>Stack indicado por el usuario</legend>
-        {stack.map((tec) => (
-          <Tecnology
-            alt={tec}
-            src={`https://cdn.svgporn.com/logos/${tec}.svg`}
-          />
-        ))}
-      </Stack>
-    </Card>
+        <Name>{name}</Name>
+        <Contact>
+          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`tel:${phone}`}>{phone}</a>
+        </Contact>
+        <Description>{description}</Description>
+        <Information>
+          <div>
+            <a href={github}>
+              <Github size="22" />
+            </a>
+            <a href={linkedIn}>
+              <Linkedin size="22" />
+            </a>
+          </div>
+          <div>
+            <Location size="22" />
+            <span>
+              {adress.city}, {adress.country}
+            </span>
+          </div>
+          <span>Última conexión {lastConexion}</span>
+        </Information>
+        <Job>Buscando trabajo de {job}</Job>
+        <Stack>
+          <EditPosition>
+            <Edit size="16px" />
+          </EditPosition>
+          <legend>Stack indicado por el usuario</legend>
+          {stack.map((tec) => (
+            <Tecnology
+              alt={tec}
+              src={`https://cdn.svgporn.com/logos/${tec}.svg`}
+            />
+          ))}
+        </Stack>
+      </Card>
+    </>
   );
 }

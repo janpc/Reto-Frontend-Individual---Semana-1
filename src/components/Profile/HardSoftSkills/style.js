@@ -3,7 +3,7 @@ import colors from '../../../style/colors';
 
 const Title = styled.h4`
   font-size: 20px;
-  margin: 2.5rem 0 1rem;
+  margin: 2.5rem 1rem 1rem;
 `;
 
 const ValidatedSkills = styled.fieldset`
@@ -28,6 +28,9 @@ const ValidatedSkills = styled.fieldset`
 const OtherSkills = styled.div`
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem;
+  justify-content: center;
 `;
 
 const Skill = styled.div`

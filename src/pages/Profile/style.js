@@ -15,4 +15,19 @@ export const Main = styled.main`
   gap: 1rem;
   flex-direction: column;
   align-items: center;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.primary.dark};
+    border-radius: 5px;
+    &:hover {
+      background: ${colors.primary.light};
+    }
+  }
 `;
