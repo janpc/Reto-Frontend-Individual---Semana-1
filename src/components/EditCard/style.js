@@ -185,6 +185,17 @@ const SwitchLine = styled.div`
   flex-wrap: wrap;
 `;
 
+const BackgroundImagePreview = styled.img`
+  width: 100%;
+  margin: 2rem 0;
+  cursor: pointer;
+
+  &:hover,
+  :focus {
+    opacity: 0.7;
+  }
+`;
+
 export {
   Background,
   Card,
@@ -194,5 +205,6 @@ export {
   Submit,
   Form,
   SwitchContainer,
-  SwitchLine
+  SwitchLine,
+  BackgroundImagePreview
 };

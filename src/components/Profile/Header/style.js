@@ -6,6 +6,7 @@ const BackgroundImage = styled.div`
   height: 150px;
   width: 100%;
   background-size: cover;
+  background-position: center;
   position: relative;
   display: flex;
   justify-content: center;

@@ -16,6 +16,7 @@ import { Card } from '../../../style/main';
 import { Github, Linkedin, Location, Edit } from '../../../icons';
 import EditProfileCard from '../../EditCard/EditProfileCard';
 import { useState } from 'react';
+import ChangeBackgroundImage from '../../EditCard/ChangeBackgroundImage';
 
 export default function Header({ userInfo }) {
   const {
@@ -34,9 +35,16 @@ export default function Header({ userInfo }) {
   } = userInfo;
 
   const [isShowingEditForm, setIsShowingEditForm] = useState(false);
+  const [isShowingBackgroundForm, setIsShowingBackgroundForm] = useState(false);
 
   return (
     <>
+      {isShowingBackgroundForm && (
+        <ChangeBackgroundImage
+          userInfo={userInfo}
+          closeForm={() => setIsShowingBackgroundForm(false)}
+        />
+      )}
       {isShowingEditForm && (
         <EditProfileCard
           userInfo={userInfo}
@@ -45,7 +53,11 @@ export default function Header({ userInfo }) {
       )}
       <Card>
         <BackgroundImage url={backgroundImage}>
-          <EditPosition top="0.5rem" right="0.5rem">
+          <EditPosition
+            top="0.5rem"
+            right="0.5rem"
+            onClick={() => setIsShowingBackgroundForm(true)}
+          >
             <Edit size="16px" />
           </EditPosition>
           <ProfileImage alt={name} src={image} />

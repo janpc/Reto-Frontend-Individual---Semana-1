@@ -1,5 +1,4 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { userSelector } from '../../redux/user/user-selectors';
 
@@ -11,6 +10,7 @@ import { Main } from './style';
 
 export default function Profile() {
   const userInfo = useSelector(userSelector);
+
   return (
     <Main>
       <Header userInfo={userInfo} />
