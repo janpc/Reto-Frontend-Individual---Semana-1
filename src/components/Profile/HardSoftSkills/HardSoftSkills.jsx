@@ -3,10 +3,8 @@ import 'react-svg-radar-chart/build/css/index.css';
 
 import { Title, ValidatedSkills, OtherSkills, Skill } from './style';
 
-import { EditPosition } from '../../../style/main';
 import { Card } from '../../../style/main';
 
-import { Edit } from '../../../icons';
 import { getMostValuatedHardSkills, getSoftSkillsData } from '../../../helpers';
 import colors from '../../../style/colors';
 
