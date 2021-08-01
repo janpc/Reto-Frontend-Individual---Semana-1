@@ -28,7 +28,7 @@ export default function ChangeBackgroundImage({ closeForm }) {
   return (
     <EditCard closeForm={closeForm}>
       <h2>Select a photo:</h2>
-      {photos.map((photo) => (
+      {photos?.map((photo) => (
         <ImagePreview key={photo.id} photo={photo} setPicture={setPicture} />
       ))}
       {}
