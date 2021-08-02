@@ -3,6 +3,8 @@
 Este es mi proyecto para el reto individual de la semana 1 de NUWE. Es una pagina simple imitando los componentes de la pagina de usuario de NUWE con algunos cambios de diseño.
 
 
+[Page Preview](https://6107e6e7ade53d9efa3d6998--reto-frontend-semana-1.netlify.app/)
+
 ## Start 🚀
 
 Get a clone of the project in local. You need to have installed nodejs and yarn
